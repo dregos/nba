@@ -10,7 +10,12 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/register', 'Auth\RegisterController@create');
+Route::post('/register', 'Auth\RegisterController@store');
 
+Route::get('/logout', 'LoginController@destroy');
+Route::get('/login', 'LoginController@create')->name('login');
+Route::post('/login', 'LoginController@store');
 
 Route::get('/', 'TeamsController@index');
 Route::get('/teams/create', 'TeamsController@create');
