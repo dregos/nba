@@ -3,7 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
+use App\Post;
 
 class Team extends Model
 {
@@ -16,5 +16,14 @@ class Team extends Model
 
   public function comments(){
     return $this->hasMany(Comment::class);
+  }
+
+  public function posts()
+  {
+      return $this->belongsToMany(Post::class);
+  }
+
+  public function getRouteKeyName(){
+    return 'name';
   }
 }

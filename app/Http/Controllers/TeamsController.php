@@ -36,8 +36,14 @@ class TeamsController extends Controller
       'city' => request('city'),
     ]);
 
-    $teams = Team::all();
+    $teams = Team::with('post')->all();
     return view('teams.index', compact('teams') );
+  }
+
+  public function teamPosts(Team $team)
+  {
+    $posts = $team->posts()->with('user')->latest()->paginate(10);
+    return view('news.index', compact('posts'));
   }
 
 }

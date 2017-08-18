@@ -14,7 +14,7 @@ class PostsController extends Controller
 
   public function index()
   {
-      $posts = Post::with('user')->latest()->paginate(5);
+      $posts = Post::with('user', 'teams')->latest()->paginate(5);
       \Log::info($posts);
 
       return view('news.index', ['posts' => $posts]);
@@ -22,7 +22,7 @@ class PostsController extends Controller
 
   public function show($id)
   {
-      $post = Post::find($id);
+      $post = Post::with('user', 'teams')->find($id);
 
       return view('news.show', ['post' => $post]);
   }

@@ -32,3 +32,5 @@ Route::get('/news', 'PostsController@index');
 Route::get('/news/create', 'PostsController@create');
 Route::get('/news/{id}', 'PostsController@show');
 Route::post('/news', 'PostsController@store');
+
+Route::get('news/teams/{team}', 'TeamsController@teamPosts');
