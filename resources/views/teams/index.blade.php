@@ -11,8 +11,8 @@
           <h2 class="mt-0 mb-1">
             <a href="/teams/{{$team->id}}">{{$team->name}}</a>
           </h2>
-          <h3 class="mt-0 mb-1">{{$team->city}}</h3>
-          <h3 class="mt-0 mb-1">{{$team->address}}</h3>
+          <span class="mt-0 mb-1">{{$team->city}}</span>, 
+          <span class="mt-0 mb-1">{{$team->address}}</span>
         </div>
       </li>
 

@@ -27,3 +27,8 @@ Route::post('/teams/{id}/comment', 'CommentsController@store');
 Route::get('/players/create/{id}', 'PlayersController@create');
 Route::get('/players/{id}', 'PlayersController@show');
 Route::post('/players/create/{id}', 'PlayersController@store');
+
+Route::get('/news', 'PostsController@index');
+Route::get('/news/create', 'PostsController@create');
+Route::get('/news/{id}', 'PostsController@show');
+Route::post('/news', 'PostsController@store');

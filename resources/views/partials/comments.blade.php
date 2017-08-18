@@ -1,9 +1,9 @@
-<h4>Comments</h4>
+<h5>Comments</h5>
 
 @foreach($team->comments as $comment)
     <li>
-        <strong>{{ $comment->created_at->diffForHumans() }}</strong>
-        {{ $comment->body }}
+        <strong>{{ $comment->body }}</strong>
+        ({{ $comment->created_at->diffForHumans() }})
     </li>
 @endforeach
 
