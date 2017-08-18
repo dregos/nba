@@ -1,4 +1,5 @@
 @if(count($team->players)>0)
+<h4>Players</h4>
 
   <div class="players-list">
     @foreach($team->players as $player)

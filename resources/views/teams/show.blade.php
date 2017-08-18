@@ -24,4 +24,8 @@
 
   @include('partials.players')
 
+  <hr>
+
+  @include('partials.comments')
+
 @endsection
