@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Post;
-use App\Tag;
+use App\Team;
 
 class PostsController extends Controller
 {
@@ -29,7 +29,8 @@ class PostsController extends Controller
 
   public function create()
   {
-      return view('news.create');
+      $teams = Team::all();
+      return view('news.create', compact('teams'));
   }
 
   public function store()
@@ -46,8 +47,9 @@ class PostsController extends Controller
       $post->user_id = auth()->user()->id;
       $post->save();
 
-      //$post->users()->attach(request('users'));
-
+      $post->teams()->attach(request('teams'));
+      session()->flash('message', "Thank you for publishing article on www.vivify-nba.com.");
+      
       return redirect('/news');
 
   }

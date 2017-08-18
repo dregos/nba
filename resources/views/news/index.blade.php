@@ -1,9 +1,8 @@
 @extends('layouts.master')
 
 @section('content')
-
-
-
+<a class="btn btn-outline-primary" href="/news/create">Add news</a>
+<hr>
     @foreach($posts as $post)
 
         <div class="blog-post">

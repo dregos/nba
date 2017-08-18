@@ -22,6 +22,14 @@
         <div class="form-group">
             <button type="submit" class="btn btn-primary">Submit</button>
         </div>
+        <div class="form-group">
+            <label for="teams[]">Teams relating</label>
+            @foreach($teams as $team)
+              <div class="checkbox">
+                <label><input type="checkbox" name="teams[]" id="teams" value="{{$team->id}}">{{$team->name}}</label>
+              </div>
+            @endforeach
+        </div>
 
     </form>
 
