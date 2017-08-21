@@ -17,5 +17,6 @@
 
     <p>{{ $post->content }}</p>
 
+  
 
 @endsection

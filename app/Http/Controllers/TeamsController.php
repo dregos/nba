@@ -13,8 +13,8 @@ class TeamsController extends Controller
   }
 
   public function show($id){
-    $team = Team::with('comments')->find($id);
-    return view('teams.show', compact('team') );
+    $team = Team::with('comments', 'posts')->find($id);
+    return view('teams.show', compact('team', 'posts') );
   }
 
   public function create(){

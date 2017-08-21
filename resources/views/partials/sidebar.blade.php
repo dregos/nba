@@ -1,13 +1,13 @@
 
-<div class="col-sm-3 offset-sm-1 blog-sidebar">
+<div class="col-sm-12 offset-sm-2 blog-sidebar">
   <div class="sidebar-module sidebar-module-inset">
-    <h4>Latest movies</h4>
+    <h4>Latest news</h4>
 
-@if(count($latestMovies)>0)
+@if(count($team->posts)>0)
 
-<ol class="list-unstyled">
-    @foreach($latestMovies as $movie)
-      <strong><li><a href="/movies/{{$movie->id}}">{{$movie->title}}</a></li></strong>
+<ol class="list-group">
+    @foreach($team->posts as $post)
+      <li class="list-group-item"><a href="/news/{{$post->id}}">{{$post->title}}</a></li>
     @endforeach
 </ol>
 
